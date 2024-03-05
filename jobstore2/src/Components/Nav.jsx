@@ -5,7 +5,7 @@ import { REGISTER } from "../assets/Icons";
 
 const Nav = () => {
   return (
-    <div className="sm:py-5 max-lg:justify-between max-lg:px-10 w-full font-poppins text-5xl flex justify-evenly items-center border-b-[1px] border-[#6D6D6D]  bg-[#12141D] text-[#F8F8F8] max-container">
+    <div className="sm:py-5 max-lg:justify-between max-lg:px-10 w-full font-poppins text-5xl flex justify-evenly items-center border-b-[1px] border-nav-border  bg-[#12141D] text-[#F8F8F8] max-container">
       <span style={{ fontFamily: "Poppins" }}>
         <Link to="/">
         <h2 className="text-3xl font-semibold">Jobstore</h2>
