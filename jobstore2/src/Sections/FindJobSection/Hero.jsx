@@ -20,7 +20,7 @@ const Hero = () => {
      </div>
     <input className=" font-poppins-medium lg:px-4 lg:py-5 border-none max-sm:w-[90%] lg:w-96 outline-none text-black text-md max-sm:text-sm " type="text" placeholder="Job title, keyword or company"/>
      </div>
-    <button className=" flex gap-1 font-poppins-light bg-[#cdcccc]  max-sm:text-sm lg:text-[13px] max-sm:w-30 p-2  lg:px-2 lg:py-2 rounded-md text-black"><span className="max-sm:hidden"><img src={locationIcon} alt="locationIcon" width={18}/></span>Any location</button>
+    <button className=" flex gap-1 font-poppins-light bg-button-gray  max-sm:text-sm lg:text-[13px] max-sm:w-30 p-2  lg:px-2 lg:py-2 rounded-md text-black"><span className="max-sm:hidden"><img src={locationIcon} alt="locationIcon" width={18}/></span>Any location</button>
     </div>
 
     <p style={{fontFamily:"poppins"}} className="text-white font-semibold pb-8 z-10"><span className="text-light-green font-semibold text-xl">21,701,403</span> Total Jobs Posted</p>

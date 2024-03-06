@@ -7,13 +7,13 @@ const Home = () => {
         <section className="padding-b wide:padding-r bg-[#12141D]">
           <Hero />
         </section>
-        <section className="padding border-2 border-solid border-black">
+        <section className="padding">
           <CompaniesLogoSlider />
         </section>
-        <section className="padding border-2 border-solid border-black">
+        <section className="padding bg-light-white">
           <FeaturedJobs />
         </section>
-        <section className="padding_sep border-2 border-solid border-black">
+        <section className="padding_sep border-2 border-solid border-black ">
           <FeaturedCompanies />
         </section>
         <section className="padding border-2 border-solid border-black">

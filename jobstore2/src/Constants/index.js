@@ -16,5 +16,11 @@ export const CompaniesLogo = [
             {Logo: EbayLogo},
             {Logo: AmazonLogo},
             {Logo: MicrosoftLogo}
-        
+]
+
+
+export const FeaturesJobButtonText = [
+  {ButtonText: "Freelance"},
+  {ButtonText: "Full-time"},
+  {ButtonText: "Internship"},
 ]
