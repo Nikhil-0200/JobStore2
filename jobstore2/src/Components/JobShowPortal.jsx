@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-const JobShowPortal = ({title, location, type, logo }) => {
+const JobShowPortal = ({position, companyLogo, state, place}) => {
     
   return (
     <section className="flex justify-between items-center px-4 py-4">
@@ -8,15 +8,15 @@ const JobShowPortal = ({title, location, type, logo }) => {
             <div className="w-[70px] border border-black h-[70px] rounded-xl flex items-center overflow-x-hidden">
         <img
           className="object-cover"
-          src={logo}
+          src={companyLogo}
           alt=""
         />
       </div>
-      <div className="flex flex-col items-center justify-center border justify-evenly gap-2">
-        <h1 className="font-poppins-semibold text-2xl">{title}</h1>
+      <div className="flex flex-col border justify-evenly gap-2">
+        <h1 className="font-poppins-semibold text-2xl">{position}</h1>
         <div className="font-poppins-medium text-slate-gray">
-          <span>{location}</span>
-          <span>{type}</span>
+          <span>{state}</span>
+          <span>{place}</span>
         </div>
       </div>
         </div>

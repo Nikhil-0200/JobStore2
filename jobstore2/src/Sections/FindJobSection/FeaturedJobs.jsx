@@ -5,45 +5,27 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 
-const FeaturedJobs = () => {
+const FeaturedJobs = ({search}) => {
+const [data, setData] = useState([])
 
+console.log({search})
 
-  const [data, setData] = useState([])
-
-  // const axios = require('axios');
-
-// const options = {
-//   method: 'GET',
-//   url: 'https://linkedin-api8.p.rapidapi.com/search-jobs',
-//   params: {
-//     keywords: 'front end developer',
-//     locationId: '92000000',
-//     datePosted: 'anyTime',
-//     jobType: 'fullTime',
-//     experienceLevel: 'entryLevel',
-//     onsiteRemote: 'remote',
-//     sort: 'mostRelevant'
-//   },
-//   headers: {
-//     'X-RapidAPI-Key': 'bba5e88c22msh0f99678a618b83ep1abc21jsn3b792ac36709',
-//     'X-RapidAPI-Host': 'linkedin-api8.p.rapidapi.com'
-//   }
-// };
-
-// async function fetchData(){
-//     try {
-//         const response = await axios.request(options);
-//         // console.log(response.data.data);
-setData(response.data.data)
-    } catch (error) {
-        console.error(error);
-    }
+async function fetchData(){
+  try {
+    let res = await axios({
+      method: "GET",
+      baseURL: `https://script.google.com/macros/s/AKfycbzKxW9UUjsXvkNkbep6IpizHsSGAaBLij8nKK7XuQXBLoTUI5nSQS_25i3naBTfobi7Hg/exec?position=JavaScript`,
+    })
+    console.log(res.data.data)
+    setData(res.data.data)
+  } catch (error) {
+    console.log("Error");
+  }
 }
 
 useEffect(()=>{
-    fetchData()
-}, [])
-
+  fetchData()
+}, [search])
 
 
 
@@ -75,7 +57,6 @@ useEffect(()=>{
         {data.map((ele)=>(
         <JobShowPortal
         {...ele}
-        logo={ele.company.logo}
         key={ele.id}
         />
         ))}

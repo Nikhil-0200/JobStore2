@@ -1,10 +1,35 @@
+import { useState } from "react"
 import { SEARCH, locationIcon } from "../../assets/Icons/index.js"
 import { GROUPIMAGE, GROUPIMAGE2 } from "../../assets/Images"
-
+import FeaturedJobs from "./FeaturedJobs.jsx"
 
 
 
 const Hero = () => {
+const [search, setSearch] = useState({
+  searchedWord: "React"
+})
+
+function handleChange(event){
+
+  const newData = {
+    ...search,
+
+    [event.target.name]: event.target.value
+  }
+
+  setSearch(newData)
+}
+
+function sendData(){
+  return(
+<FeaturedJobs
+  search={search}
+  />    
+  )
+  
+}
+
   return (
     <section className="max-container">
       <div className="flex flex-col items-center padding-t relative w-full lg:padding-x sm:px-5 px-2">
@@ -18,9 +43,14 @@ const Hero = () => {
      <div className="bg-red-500 p-2 rounded-lg max-sm:hidden">
      <img src={SEARCH} alt="searchIcon" width={20} height={20}/>
      </div>
-    <input className=" font-poppins-medium lg:px-4 lg:py-5 border-none max-sm:w-[90%] lg:w-96 outline-none text-black text-md max-sm:text-sm " type="text" placeholder="Job title, keyword or company"/>
+
+
+    <input className=" font-poppins-medium lg:px-4 lg:py-5 border-none max-sm:w-[90%] lg:w-96 outline-none text-black text-md max-sm:text-sm " type="text" placeholder="Job title, keyword or company" onChange={handleChange} value={search.searchedWord} name="searchedWord"/>
+
      </div>
-    <button className=" flex gap-1 font-poppins-light bg-button-gray  max-sm:text-sm lg:text-[13px] max-sm:w-30 p-2  lg:px-2 lg:py-2 rounded-md text-black"><span className="max-sm:hidden"><img src={locationIcon} alt="locationIcon" width={18}/></span>Any location</button>
+
+
+    <button className=" flex gap-1 font-poppins-light bg-button-gray  max-sm:text-sm lg:text-[13px] max-sm:w-30 p-2  lg:px-2 lg:py-2 rounded-md text-black" onClick={sendData}><span className="max-sm:hidden"><img src={locationIcon} alt="locationIcon" width={18}/></span>Any location</button>
     </div>
 
     <p style={{fontFamily:"poppins"}} className="text-white font-semibold pb-8 z-10"><span className="text-light-green font-semibold text-xl">21,701,403</span> Total Jobs Posted</p>
