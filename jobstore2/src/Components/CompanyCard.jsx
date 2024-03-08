@@ -2,7 +2,7 @@ import Button from "./Button";
 
 const CompanyCard = ({companyLogo, companyName, })=>{
     return(
-        <section className="border">
+        <section>
             <div>
                 <img src={companyLogo} alt="" />
             </div>

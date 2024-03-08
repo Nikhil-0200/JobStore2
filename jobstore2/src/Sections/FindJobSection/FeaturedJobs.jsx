@@ -43,15 +43,15 @@ const handleSeeMore = ()=>{
   return (
     <section className="max-container">
       <div className="flex flex-col content-center">
-        <h1 className="font-poppins-extrabold text-3.5xl pb-2">
+        <h1 className="font-poppins-extrabold text-3xl xl:text-3.5xl pb-2 text-center xl:text-left ">
           Featured jobs
         </h1>
-        <div className="flex justify-between">
-          <p className="font-poppins-medium text-sm text-slate-gray flex items-center">
+        <div className="flex xl:justify-between xl:flex-row flex-col ">
+          <p className="font-poppins-medium text-sm text-slate-gray flex items-center max-xl:m-auto max-xl:pb-5">
             Know your worth and find the job that qualify your life
           </p>
 
-          <div className="flex gap-5">
+          <div className="flex gap-5 max-xl:m-auto">
             {FeaturesJobButtonText.map((ele, index) => (
               <Button
                 key={index}
@@ -79,6 +79,9 @@ const handleSeeMore = ()=>{
               <Button
                 onClick={handleSeeMore}
                 label="See More Jobs"
+                backgroundColor="bg-coral-red"
+                textColor="text-white"
+                textSize="text-sm"
               />
             
           </div>

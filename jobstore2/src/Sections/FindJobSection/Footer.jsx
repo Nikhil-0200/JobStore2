@@ -6,14 +6,14 @@ import { FooterData } from "../../Constants/index";
 const Footer = () => {
   return (
     <section className="text-white">
-      <div className="flex justify-between border-b border-slight-gray pb-5">
+      <div className="flex justify-between border-b border-slate-gray pb-5">
         <h1 className="font-poppins-semibold text-3xl pb-2">
           Are you interested in boosting your career?{" "}
         </h1>
-        <Button label="Login to Community" textColor="text-white" />
+        <Button label="Login to Community" backgroundColor="bg-coral-red" textColor="text-white" textSize="text-sm"/>
       </div>
 
-      <div className="flex justify-between py-10 border-b border-slight-gray">
+      <div className="flex justify-between py-10 border-b border-slate-gray max-lg:flex-col-reverse">
         <div>
           <span style={{ fontFamily: "Poppins" }}>
             <Link to="/">
@@ -45,6 +45,20 @@ const Footer = () => {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      <div className="flex justify-between font-poppins-light text-[12px] py-8">
+        <div className="flex gap-5">
+          <h1>Privacy Policy</h1>
+          <h1>License</h1>
+          <h1>API</h1>
+          <h1>@2021 All rights reserved</h1>
+        </div>
+
+        <div className="flex gap-5">
+          <h1>Currency - USD</h1>
+          <h1>English</h1>
         </div>
       </div>
     </section>

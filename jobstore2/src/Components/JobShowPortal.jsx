@@ -3,25 +3,25 @@ import Button from "./Button";
 const JobShowPortal = ({position, companyLogo, state, place}) => {
     
   return (
-    <section className="flex justify-between items-center px-4 py-4">
-        <div className="flex gap-10 max-w-[90%]">
+    <section className="xl:flex xl:justify-between xl:items-center xl:px-4 py-4 border items-center">
+        <div className="flex gap-4 xl:gap-10 xl:max-w-[90%] max-xl:flex-col max-xl:items-center">
             <div className="w-[70px] border border-black h-[70px] rounded-xl flex items-center overflow-x-hidden">
         <img
-          className="object-cover"
+          className="object-cover w-[100%]"
           src={companyLogo}
-          alt=""
+          alt="Logo"
         />
       </div>
-      <div className="flex flex-col border justify-evenly gap-2">
-        <h1 className="font-poppins-semibold text-2xl">{position}</h1>
-        <div className="font-poppins-medium text-slate-gray">
+      <div className="flex flex-col border justify-evenly gap-2 max-xl:w-full max-xl:items-center">
+        <h1 className="font-poppins-semibold xl:text-2xl max-xl:text-center">{position}</h1>
+        <div className="font-poppins-medium text-slate-gray max-xl:text-center">
           <span>{state}</span>
-          <span>{place}</span>
+          <span>, {place}</span>
         </div>
       </div>
         </div>
       
-      <div>
+      <div className="flex max-xl:justify-center pt-6">
         <Button
           label="Apply Job"
           backgroundColor="bg-sky-blue"
