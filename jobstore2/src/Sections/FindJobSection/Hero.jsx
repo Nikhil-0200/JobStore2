@@ -1,34 +1,18 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { SEARCH, locationIcon } from "../../assets/Icons/index.js"
 import { GROUPIMAGE, GROUPIMAGE2 } from "../../assets/Images"
-import FeaturedJobs from "./FeaturedJobs.jsx"
-
+import SearchContext from "../../Context/SearchContext.jsx"
 
 
 const Hero = () => {
-const [search, setSearch] = useState({
-  searchedWord: "React"
-})
 
-function handleChange(event){
+  const {inputData} = useContext(SearchContext)
 
-  const newData = {
-    ...search,
-
-    [event.target.name]: event.target.value
+  function change(event){
+    const inputValue = (event.target.value)
+    inputData(inputValue)
   }
 
-  setSearch(newData)
-}
-
-function sendData(){
-  return(
-<FeaturedJobs
-  search={search}
-  />    
-  )
-  
-}
 
   return (
     <section className="max-container">
@@ -45,12 +29,12 @@ function sendData(){
      </div>
 
 
-    <input className=" font-poppins-medium lg:px-4 lg:py-5 border-none max-sm:w-[90%] lg:w-96 outline-none text-black text-md max-sm:text-sm " type="text" placeholder="Job title, keyword or company" onChange={handleChange} value={search.searchedWord} name="searchedWord"/>
+    <input className=" font-poppins-medium lg:px-4 lg:py-5 border-none max-sm:w-[90%] lg:w-96 outline-none text-black text-md max-sm:text-sm " type="text" placeholder="Job title, keyword or company"  name="searchedWord"  onChange={change}/>
 
      </div>
 
 
-    <button className=" flex gap-1 font-poppins-light bg-button-gray  max-sm:text-sm lg:text-[13px] max-sm:w-30 p-2  lg:px-2 lg:py-2 rounded-md text-black" onClick={sendData}><span className="max-sm:hidden"><img src={locationIcon} alt="locationIcon" width={18}/></span>Any location</button>
+    <button className=" flex gap-1 font-poppins-light bg-button-gray  max-sm:text-sm lg:text-[13px] max-sm:w-30 p-2  lg:px-2 lg:py-2 rounded-md text-black"><span className="max-sm:hidden"><img src={locationIcon} alt="locationIcon" width={18}/></span>Any location</button>
     </div>
 
     <p style={{fontFamily:"poppins"}} className="text-white font-semibold pb-8 z-10"><span className="text-light-green font-semibold text-xl">21,701,403</span> Total Jobs Posted</p>

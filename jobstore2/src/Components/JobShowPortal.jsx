@@ -4,7 +4,7 @@ const JobShowPortal = ({position, companyLogo, state, place}) => {
     
   return (
     <section className="flex justify-between items-center px-4 py-4">
-        <div className="flex gap-10">
+        <div className="flex gap-10 max-w-[90%]">
             <div className="w-[70px] border border-black h-[70px] rounded-xl flex items-center overflow-x-hidden">
         <img
           className="object-cover"

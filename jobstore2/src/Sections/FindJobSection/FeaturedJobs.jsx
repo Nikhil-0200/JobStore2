@@ -1,20 +1,23 @@
 import Button from "../../Components/Button";
 import { FeaturesJobButtonText } from "../../Constants/index";
 import JobShowPortal from "../../Components/JobShowPortal";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import SearchContext from "../../Context/SearchContext";
 
 
-const FeaturedJobs = ({search}) => {
+const FeaturedJobs = () => {
+  const [displayLimit, setDisplayLimit] = useState(5);
+  const {search} = useContext(SearchContext)
 const [data, setData] = useState([])
 
-console.log({search})
+console.log("Data recieved", search)
 
 async function fetchData(){
   try {
     let res = await axios({
       method: "GET",
-      baseURL: `https://script.google.com/macros/s/AKfycbzKxW9UUjsXvkNkbep6IpizHsSGAaBLij8nKK7XuQXBLoTUI5nSQS_25i3naBTfobi7Hg/exec?position=JavaScript`,
+      baseURL: `https://script.google.com/macros/s/AKfycbzKxW9UUjsXvkNkbep6IpizHsSGAaBLij8nKK7XuQXBLoTUI5nSQS_25i3naBTfobi7Hg/exec?position=${search.searchWord}`,
     })
     console.log(res.data.data)
     setData(res.data.data)
@@ -24,9 +27,20 @@ async function fetchData(){
 }
 
 useEffect(()=>{
-  fetchData()
-}, [search])
+  const debounce = setTimeout(()=>{
+    fetchData()
+  }, 1000)
 
+  return ()=>{
+    clearTimeout(debounce)
+  }
+
+}, [search.searchWord])
+
+
+const handleSeeMore = ()=>{
+  setDisplayLimit(displayLimit + 5)
+}
 
 
   return (
@@ -54,13 +68,25 @@ useEffect(()=>{
       </div>
 
       <div className="border-[1.5px] border-slight-gray rounded-lg my-10">
-        {data.map((ele)=>(
+        {data.slice(0, displayLimit).map((ele)=>(
         <JobShowPortal
         {...ele}
         key={ele.id}
         />
         ))}
       </div>
+
+      {data.length > displayLimit && (
+          <div className="flex justify-center">
+            
+              <Button
+                onClick={handleSeeMore}
+                label="See More Jobs"
+              />
+            
+          </div>
+        )}
+        
     </section>
   );
 };
