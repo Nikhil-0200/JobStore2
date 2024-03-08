@@ -10,6 +10,15 @@ import EbayLogo from "./Ebay_Logo.png";
 import AmazonLogo from "./Amazon_Logo.png";
 import MicrosoftLogo from "./Microsoft_Logo.png";
 
+import person1 from "./perosn1.jpg";
+import person2 from "./perosn2.jpg";
+import person3 from "./perosn3.jpg";
+import person4 from "./peraon4.jpg";
+import person5 from "./person5.jpg";
+import person6 from "./person6.jpg";
+import person7 from "./person7.jpg";
+import person8 from "./perosn8.jpg";
+
 export {
   Jobstorelogo,
   GROUPIMAGE,
@@ -21,4 +30,12 @@ export {
   EbayLogo,
   AmazonLogo,
   MicrosoftLogo,
+  person1,
+  person2,
+  person3,
+  person4,
+  person5,
+  person6,
+  person7,
+  person8,
 };

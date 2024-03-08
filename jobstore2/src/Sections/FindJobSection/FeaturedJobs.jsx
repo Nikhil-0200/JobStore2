@@ -11,15 +11,12 @@ const FeaturedJobs = () => {
   const {search} = useContext(SearchContext)
 const [data, setData] = useState([])
 
-console.log("Data recieved", search)
-
 async function fetchData(){
   try {
     let res = await axios({
       method: "GET",
       baseURL: `https://script.google.com/macros/s/AKfycbzKxW9UUjsXvkNkbep6IpizHsSGAaBLij8nKK7XuQXBLoTUI5nSQS_25i3naBTfobi7Hg/exec?position=${search.searchWord}`,
     })
-    console.log(res.data.data)
     setData(res.data.data)
   } catch (error) {
     console.log("Error");

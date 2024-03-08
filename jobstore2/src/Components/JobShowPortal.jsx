@@ -27,7 +27,7 @@ const JobShowPortal = ({position, companyLogo, state, place}) => {
           backgroundColor="bg-sky-blue"
           textColor="text-blue"
           textSize="text-sm"
-        />{" "}
+        />
       </div>
     </section>
   );

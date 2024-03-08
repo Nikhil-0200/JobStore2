@@ -13,16 +13,16 @@ const Home = () => {
         <section className="padding bg-light-white">
           <FeaturedJobs />
         </section>
-        <section className="padding_sep border-2 border-solid border-black ">
+        <section className="padding border-2 border-solid border-black ">
           <FeaturedCompanies />
         </section>
-        <section className="padding border-2 border-solid border-black">
+        <section className="py-8 border-2 border-solid border-black bg-hero-black">
           <CustomerReviews />
         </section>
-        <section className="padding_sep border-2 border-solid border-black">
+        <section className="padding ">
           <ManageHiring />
         </section>
-        <section className="padding-x padding-t border-2 border-solid border-black">
+        <section className="padding-x padding-t bg-hero-black">
           <Footer />
         </section>
     </section>
