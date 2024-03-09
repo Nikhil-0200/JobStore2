@@ -1,4 +1,4 @@
-import { Hero, CompaniesLogoSlider, FeaturedJobs, FeaturedCompanies, CustomerReviews, ManageHiring, Footer } from "../Sections/FindJobSection/index"
+import { Hero, CompaniesLogoSlider, FeaturedJobs, CustomerReviews, ManageHiring, Footer } from "../Sections/FindJobSection/index"
 
 
 const Home = () => {
@@ -12,9 +12,6 @@ const Home = () => {
         </section>
         <section className="padding bg-light-white">
           <FeaturedJobs />
-        </section>
-        <section className="padding border-2 border-solid border-black ">
-          <FeaturedCompanies />
         </section>
         <section className="py-8 border-2 border-solid border-black bg-hero-black">
           <CustomerReviews />

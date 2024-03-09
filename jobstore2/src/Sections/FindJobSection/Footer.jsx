@@ -6,7 +6,7 @@ import { FooterData } from "../../Constants/index";
 const Footer = () => {
   return (
     <section className="text-white">
-      <div className="flex justify-between border-b border-slate-gray pb-5">
+      <div className="flex justify-between border-b border-slate-gray pb-5 max-xl:flex-col">
         <h1 className="font-poppins-semibold text-3xl pb-2">
           Are you interested in boosting your career?{" "}
         </h1>
@@ -34,7 +34,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-10">
+        <div className="grid grid-cols-4 gap-10 max-xl:grid-cols-2 max-xl:pb-10">
           {FooterData.map((ele, index) => (
             <div key={index}>
               <h1 className="font-poppins-medium pb-5 pt-2">{ele.title}</h1>
@@ -48,7 +48,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex justify-between font-poppins-light text-[12px] py-8">
+      <div className="flex justify-between font-poppins-light text-[12px] py-8 max-sm:flex-col max-xl:items-center gap-3">
         <div className="flex gap-5">
           <h1>Privacy Policy</h1>
           <h1>License</h1>
