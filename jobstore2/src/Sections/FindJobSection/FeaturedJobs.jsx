@@ -4,22 +4,28 @@ import JobShowPortal from "../../Components/JobShowPortal";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import SearchContext from "../../Context/SearchContext";
+import Loading from "../../Components/Loading";
 
 
 const FeaturedJobs = () => {
+  const [loading, setLoading] = useState(false)
   const [displayLimit, setDisplayLimit] = useState(5);
   const {search} = useContext(SearchContext)
 const [data, setData] = useState([])
 
 async function fetchData(){
+  setLoading(true)
   try {
     let res = await axios({
       method: "GET",
       baseURL: `https://script.google.com/macros/s/AKfycbzKxW9UUjsXvkNkbep6IpizHsSGAaBLij8nKK7XuQXBLoTUI5nSQS_25i3naBTfobi7Hg/exec?position=${search.searchWord}`,
     })
+    setLoading(false)
     setData(res.data.data)
+    console.log(res.data.data);
   } catch (error) {
     console.log("Error");
+    setLoading(false)
   }
 }
 
@@ -64,7 +70,10 @@ const handleSeeMore = ()=>{
         </div>
       </div>
 
-      <div className="border-[1.5px] border-slight-gray rounded-lg my-10">
+      <div className="  rounded-lg my-10 relative flex flex-col gap-5">
+        <div className="flex justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-1/2">
+        {loading && <Loading/>}
+        </div>
         {data.slice(0, displayLimit).map((ele)=>(
         <JobShowPortal
         {...ele}
