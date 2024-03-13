@@ -1,16 +1,18 @@
-import Button from "../../Components/Button";
+import Button from "./Button";
 import { Link } from "react-router-dom";
-import { socialMediaIconData } from "../../Constants/index";
-import { FooterData } from "../../Constants/index";
+import { socialMediaIconData } from "../Constants/index";
+import { FooterData } from "../Constants/index";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Footer = () => {
+  const {loginWithRedirect} = useAuth0()
   return (
-    <section className="text-white">
+    <section className="text-white ">
       <div className="flex justify-between border-b border-slate-gray pb-5 max-xl:flex-col">
         <h1 className="font-poppins-semibold text-3xl pb-2">
           Are you interested in boosting your career?{" "}
         </h1>
-        <Button label="Login to Community" backgroundColor="bg-coral-red" textColor="text-white" textSize="text-sm"/>
+        <Button label="Login to Community" backgroundColor="bg-coral-red" textColor="text-white" textSize="text-sm" onClick={loginWithRedirect}/>
       </div>
 
       <div className="flex justify-between py-10 border-b border-slate-gray max-lg:flex-col-reverse">

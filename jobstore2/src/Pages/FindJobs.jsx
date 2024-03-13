@@ -1,5 +1,6 @@
-import { Hero, CompaniesLogoSlider, FeaturedJobs, CustomerReviews, ManageHiring, Footer } from "../Sections/FindJobSection/index"
+import { Hero, CompaniesLogoSlider, FeaturedJobs, CustomerReviews, ManageHiring } from "../Sections/FindJobSection/index"
 
+import Footer from "../Components/Footer"
 
 const Home = () => {
   return (
@@ -20,7 +21,7 @@ const Home = () => {
           <ManageHiring />
         </section>
         <section className="padding-x padding-t bg-hero-black">
-          <Footer />
+          <Footer />  
         </section>
     </section>
   )

@@ -38,7 +38,7 @@ const [data, setData] = useState({
      </div>
 
 
-    <input className=" font-poppins-medium lg:px-4 lg:py-5 border-none max-sm:w-[90%] lg:w-96 outline-none text-black text-md max-sm:text-sm " type="text" placeholder="Job title, keyword or company"  name="searchedWord" value={data.searchedWord}  onChange={change}/>
+    <input className=" font-poppins-medium lg:px-4 lg:py-5 border-none max-sm:w-[90%] lg:w-96 outline-none text-black text-md max-sm:text-sm" type="text" placeholder="Job title, keyword or company"  name="searchedWord" value={data.searchedWord}  onChange={change}/>
 
      </div>
 
