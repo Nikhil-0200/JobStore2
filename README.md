@@ -16,6 +16,11 @@ The website is live at [https://jobstore-nikhil.netlify.app/](https://jobstore-n
 
 5. **Carousel:** A carousel feature is implemented to showcase highlighted or featured job listings, making the website visually appealing.
 
+## Pages and features
+
+![Project Screenshot](https://github.com/Nikhil-0200/JobStore2/blob/main/jobstore-nikhil.netlify.png)
+
+
 ## Live Demo
 
 Check out the live demo at [https://jobstore-nikhil.netlify.app/](https://jobstore-nikhil.netlify.app/).
